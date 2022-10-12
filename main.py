@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Welcome to the API of Let's Go! Explore!"}
 
 @app.post("/createUser", response_model = User )
 async def createUser(user: User):
