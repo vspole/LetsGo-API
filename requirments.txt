@@ -1,0 +1,7 @@
+fastapi
+gunicorn
+pydantic
+uvicorn
+httptools
+firebase-admin
+typing
