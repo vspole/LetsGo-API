@@ -2,7 +2,7 @@
 FROM python:3.7-slim
 
 # Step 2. Copy local code to the container image.
-ENV  /app
+WORKDIR  /app
 COPY . ./
 
 # Step 3. Install production dependencies.
