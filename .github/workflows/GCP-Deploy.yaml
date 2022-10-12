@@ -21,7 +21,10 @@ jobs:
             service_account_email: ${{ secrets.GCP_EMAIL }}
             service_account_key: ${{ secrets.GCP_CREDENTIALS }}
 
-        - name: Setup FirebaseKey.json
+        - name: Create FirebaseKey.json
+          run: touch Keys/FirebaseKey.json
+
+        - name: Add Data FirebaseKey.json
           id: create-json
           uses: jsdaniell/create-json@1.1.2
           with:
