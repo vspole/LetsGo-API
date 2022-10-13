@@ -1,4 +1,4 @@
-# lets-go-api
+# Let's Go API
 
 ### About
 Hello! This repo houses the API that powers the Let's Go! Explore! App. This API is designed using FastAPI and python to provide the lightest and fastest api to power our App.
