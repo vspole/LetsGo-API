@@ -38,6 +38,16 @@ jobs:
             json: ${{ secrets.FIREBASE_KEY_JSON }}
             dir: 'Keys/'
 
+        - name: Create Secrets.json
+          run: touch Keys/Secrets.json
+
+        - name: Add Data Secrets.json
+          id: create-json2
+          uses: jsdaniell/create-json@1.1.2
+          with:
+            name: "Secrets.json"
+            json: ${{ secrets.SECRETS_JSON }}
+            dir: 'Keys/'
 
         - name: Build Docker image
           run: docker build . -t $IMAGE_NAME
