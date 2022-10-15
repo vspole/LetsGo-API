@@ -7,7 +7,7 @@ import json
 
 
 app = FastAPI()
-apiKey = getAPIKey()
+apiKey = getClientAPIKey()
 
 @app.get("/")
 async def root():

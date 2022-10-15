@@ -5,5 +5,8 @@ def getValueWithKey(key: str):
         data = json.load(json_file)
         return data[key]
 
-def getAPIKey():
-    return getValueWithKey("apiKey")
+def getClientAPIKey():
+    return getValueWithKey("client_api_key")
+
+def getMapsAPIKey():
+    return getValueWithKey("google_maps_api_key")
