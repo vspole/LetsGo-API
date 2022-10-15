@@ -19,6 +19,10 @@ async def createUser(user: User, userToken: str = Header(...), clientKey: str = 
     newUser = addUserToGroupFirebase(user)
     return newUser
 
+@app.get("/checkMinVersion", response_model = APIConfig)
+async def checkMinVersion():
+    currentConfig = APIConfig(minSupportedVersion = "1.4.0")
+    return currentConfig
 
 def verifyAccess(userToken: str, clientKey: str):
     if verifyIDToken(userToken) == False:
