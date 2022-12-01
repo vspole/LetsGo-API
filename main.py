@@ -3,8 +3,9 @@ from Models.models import *
 from Firebase.firebase import *
 from secrets import *
 import json
-
-
+import firebase_admin
+from secrets import getClientAPIKey
+import googleAPI
 
 app = FastAPI()
 apiKey = getClientAPIKey()
@@ -23,6 +24,11 @@ async def createUser(user: User, userToken: str = Header(...), clientKey: str = 
 async def checkMinVersion():
     currentConfig = APIConfig(minSupportedVersion = "1.4.0")
     return currentConfig
+
+@app.get("/getCoordinates", response_model = Coordinates)
+async def getCoordinates():
+    currentCoordinates = googleAPI.getCoordinatesFromAPI()
+    return currentCoordinates
 
 def verifyAccess(userToken: str, clientKey: str):
     if verifyIDToken(userToken) == False:

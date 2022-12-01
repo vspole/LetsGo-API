@@ -7,3 +7,7 @@ class User(BaseModel):
 
 class APIConfig(BaseModel):
     minSupportedVersion: str
+
+class Coordinates(BaseModel):
+    latitude: int
+    longtitude: int

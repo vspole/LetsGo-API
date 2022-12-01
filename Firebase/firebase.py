@@ -3,7 +3,6 @@ from firebase_admin import credentials
 from firebase_admin import firestore, auth
 from Models.models import *
 
-
 cred = credentials.Certificate('Keys/FirebaseKey.json')
 
 app = firebase_admin.initialize_app(cred)
