@@ -9,10 +9,13 @@ class APIConfig(BaseModel):
     minSupportedVersion: str
 
 class Place(BaseModel):
+    placeID: str
     name: str
     rating: float
+    numberOfRatings: int
     address: str
     photoReference: str
+    category: str
 
 class Location(BaseModel):
     latitude: float

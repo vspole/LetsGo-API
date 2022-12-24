@@ -27,7 +27,7 @@ async def createUser(user: User, userToken: str = Header(...), clientKey: str = 
 @app.post("/fetchNearbyPlaces", response_model = NearbyPlacesReturnModel)
 async def fetchNearbyPlaces(location: Location, searchType: SearchType = None, searchTerm: SearchTerm = None, userToken: str = Header(...), clientKey: str =  Header(...)):
     verifyAccess(userToken, clientKey)
-    places = reccursiveReastaurant(location, searchType, searchTerm, [])
+    places = reccursiveFetchPlaces(location, searchType, searchTerm, [])
     return NearbyPlacesReturnModel(places = places, count = len(places))
 
 @app.post("/fetchImage")
